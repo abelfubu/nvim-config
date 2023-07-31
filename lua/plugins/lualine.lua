@@ -13,8 +13,15 @@ return {
           section_separators = { left = "", right = "" },
         },
         sections = {
-          lualine_a = { "mode" },
-          lualine_b = { "branch" },
+          lualine_a = {
+            {
+              "mode",
+              icons_enabled = true,
+              separator = { left = "", right = "" },
+              icon = { "" },
+            },
+          },
+          lualine_b = { { "branch", icon = { "󰊢", align = "left" } } },
           lualine_c = {
             {
               "diagnostics",
@@ -35,7 +42,7 @@ return {
                 return package.loaded["nvim-navic"] and require("nvim-navic").is_available()
               end,
               padding = { left = 1, right = 0 },
-              separator = "",
+              separator = { left = "|", right = "" },
             },
           },
           lualine_x = {

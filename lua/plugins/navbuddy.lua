@@ -8,7 +8,16 @@ return {
         "SmiteshP/nvim-navic",
         "MunifTanjim/nui.nvim",
       },
-      opts = { lsp = { auto_attach = true } },
+      opts = {
+        window = {
+          sections = {
+            right = { preview = "always" },
+          },
+        },
+        lsp = {
+          auto_attach = true,
+        },
+      },
     },
   },
 }
