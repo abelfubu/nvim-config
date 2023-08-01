@@ -10,9 +10,12 @@ return {
         desc = "Find Plugin File",
       },
     },
-    -- change some options
     opts = {
       defaults = {
+        path_display = function(_, path)
+          return path:match("^.+/(.+)$")
+        end,
+        prompt_prefix = "   ",
         layout_strategy = "horizontal",
         layout_config = { prompt_position = "top" },
         sorting_strategy = "ascending",
