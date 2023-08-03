@@ -13,7 +13,13 @@ return {
     opts = {
       defaults = {
         path_display = function(_, path)
-          return path:match("^.+/(.+)$")
+          local lastSlashIndex = path:find("[^/]*$")
+
+          if not lastSlashIndex then
+            return path
+          end
+
+          return path:sub(lastSlashIndex)
         end,
         prompt_prefix = "   ",
         layout_strategy = "horizontal",

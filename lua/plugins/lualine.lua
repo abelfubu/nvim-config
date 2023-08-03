@@ -21,7 +21,12 @@ return {
               padding = { left = 1, right = 0 },
             },
           },
-          lualine_b = { { "branch", icon = { "󰊢", align = "left" } } },
+          lualine_b = {
+            {
+              "branch",
+              icon = { "󰊢", align = "left" },
+            },
+          },
           lualine_c = {
             {
               "diagnostics",
@@ -35,10 +40,20 @@ return {
             { "filetype", icon_only = true, separator = " ", padding = { left = 1, right = 0 } },
             {
               "filename",
-              path = 2,
+              path = 1,
+              padding = { left = 0, right = 1 },
               symbols = { modified = "  ", readonly = "", unnamed = "" },
-              fmt = function(file)
-                return file:match("^.+/(.+)$")
+              -- fmt = function(file)
+              --   return file:match("^.+/(.+)$")
+              -- end,
+              fmt = function(path)
+                local lastSlashIndex = path:find("[^/]*$")
+
+                if not lastSlashIndex then
+                  return path
+                end
+
+                return path:sub(lastSlashIndex)
               end,
             },
             {
@@ -93,7 +108,7 @@ return {
           lualine_y = {
             {
               function()
-                return ""
+                return "󰃰"
               end,
               separator = { left = "" },
               padding = { left = 0, right = 1 },
@@ -103,7 +118,8 @@ return {
             {
 
               function()
-                return os.date("%R")
+                -- return os.date("%R")
+                return os.date()
               end,
               padding = { left = 1, right = 1 },
               separator = { left = "" },
