@@ -17,8 +17,28 @@ return {
             {
               "mode",
               icons_enabled = true,
-              icon = { "" },
-              padding = { left = 1, right = 0 },
+              -- icon = { "" },
+              padding = { left = 1, right = 1 },
+              separator = { left = "", right = "" },
+              fmt = function(str)
+                if str == "NORMAL" then
+                  return " Ɲʘ𝖗𝚖ã𝙡"
+                elseif str == "INSERT" then
+                  return " 𝕀𝒏𐍃𝕖𝕣𝘵"
+                elseif str == "VISUAL" then
+                  return "󰕢 𝓥ì𝓼𝖚𝖆ɩ"
+                elseif str == "V-LINE" then
+                  return "󰒉 ▪︎•νℓ𝗶ⲡ𝚎•▪︎"
+                elseif str == "V-BLOCK" then
+                  return "󰩭 ⇝𝑽Ⲃļ𝗈c𝒌⇝"
+                elseif str == "REPLACE" then
+                  return "󰛔 [𝐫ėᴩ𝗅𝐚cė]"
+                elseif str == "COMMAND" then
+                  return " ɕ𝒐ṃṃɐⲡԃ"
+                elseif str == "TERMINAL" then
+                  return " 𝕥ₑŕოǐȵăɭ"
+                end
+              end,
             },
           },
           lualine_b = {
@@ -119,7 +139,7 @@ return {
 
               function()
                 -- return os.date("%R")
-                return os.date()
+                return os.date("%Y-%m-%d   %H:%M") .. " 󰕷  "
               end,
               padding = { left = 1, right = 1 },
               separator = { left = "" },
