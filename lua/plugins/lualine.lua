@@ -17,34 +17,28 @@ return {
             {
               "mode",
               icons_enabled = true,
-              -- icon = { "" },
               padding = { left = 1, right = 1 },
-              separator = { left = "", right = "" },
+              separator = { left = " ", right = "" },
               fmt = function(str)
-                if str == "NORMAL" then
-                  return " Ɲʘ𝖗𝚖ã𝙡"
-                elseif str == "INSERT" then
-                  return " 𝕀𝒏𐍃𝕖𝕣𝘵"
-                elseif str == "VISUAL" then
-                  return "󰕢 𝓥ì𝓼𝖚𝖆ɩ"
-                elseif str == "V-LINE" then
-                  return "󰒉 ▪︎•νℓ𝗶ⲡ𝚎•▪︎"
-                elseif str == "V-BLOCK" then
-                  return "󰩭 ⇝𝑽Ⲃļ𝗈c𝒌⇝"
-                elseif str == "REPLACE" then
-                  return "󰛔 [𝐫ėᴩ𝗅𝐚cė]"
-                elseif str == "COMMAND" then
-                  return " ɕ𝒐ṃṃɐⲡԃ"
-                elseif str == "TERMINAL" then
-                  return " 𝕥ₑŕოǐȵăɭ"
-                end
+                local modeMap = {
+                  NORMAL = " ",
+                  INSERT = " ",
+                  VISUAL = "󰕢 ",
+                  REPLACE = "󰛔 ",
+                  COMMAND = " ",
+                  TERMINAL = " ",
+                  ["V-LINE"] = "󰒉 ",
+                  ["V-BLOCK"] = "󰩭 ",
+                }
+
+                return (modeMap[str] or "") .. str:lower()
               end,
             },
           },
           lualine_b = {
             {
               "branch",
-              icon = { "󰊢", align = "left" },
+              icon = { " 󰊢", align = "left" },
             },
           },
           lualine_c = {
@@ -63,9 +57,6 @@ return {
               path = 1,
               padding = { left = 0, right = 1 },
               symbols = { modified = "  ", readonly = "", unnamed = "" },
-              -- fmt = function(file)
-              --   return file:match("^.+/(.+)$")
-              -- end,
               fmt = function(path)
                 local lastSlashIndex = path:find("[^/]*$")
 

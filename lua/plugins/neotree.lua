@@ -33,6 +33,13 @@ return {
           position = "50%", -- 50% means center it
         },
       },
+      default_component_configs = {
+        icon = {
+          folder_closed = "",
+          folder_open = "",
+          folder_empty = "",
+        },
+      },
     },
   },
 }

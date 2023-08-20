@@ -1,10 +1,10 @@
 return {
   {
-    -- "abelfubu/colorscheme.nvim",
+    "abelfubu/colorscheme.nvim",
     name = "everforest",
     priority = 1000,
-    dir = "~/dev/colorscheme.nvim/",
-    dev = true,
+    -- dir = "~/dev/colorscheme.nvim/",
+    -- dev = true,
   },
   {
     "LazyVim/LazyVim",

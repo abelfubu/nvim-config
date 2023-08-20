@@ -23,7 +23,7 @@ return {
         end,
         prompt_prefix = "   ",
         layout_strategy = "horizontal",
-        layout_config = { prompt_position = "top" },
+        layout_config = { prompt_position = "top", width = 0.70 },
         sorting_strategy = "ascending",
         winblend = 0,
       },
