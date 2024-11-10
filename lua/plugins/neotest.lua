@@ -10,7 +10,7 @@ return {
         opts.adapters,
         require("neotest-jest")({
           jestCommand = function(path)
-            return "npx jest --  --forceExit --detectOpenHandles " .. path:gsub("\\", "/")
+            return "npx jest --  --json --forceExit --detectOpenHandles " .. path:gsub("\\", "/")
           end,
           discovery = {
             enabled = false,

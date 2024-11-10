@@ -6,7 +6,7 @@ return {
       integrations = {
         cmp = true,
         alpha = true,
-        bufferline = true,
+        bufferline = false,
         mason = true,
         neotree = true,
         neotest = true,
