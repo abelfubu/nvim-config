@@ -1,6 +1,7 @@
 return {
   {
     "nvim-lualine/lualine.nvim",
+    enabled = true,
     event = "VeryLazy",
     opts = function()
       -- PERF: we don't need this lualine require madness 🤷
@@ -22,8 +23,8 @@ return {
             {
               "mode",
               icons_enabled = true,
-              padding = { left = 1, right = 1 },
-              separator = { left = "", right = "" },
+              padding = { left = 1, right = 0 },
+              separator = { left = "", right = "" },
               fmt = function(str)
                 local modeMap = {
                   NORMAL = " ",
@@ -40,7 +41,14 @@ return {
               end,
             },
           },
-          lualine_b = { { "branch", icon = { " 󰊢", align = "left" } } },
+          lualine_b = {
+            {
+              "branch",
+              icon = { "󰊢", align = "left" },
+              separator = { left = "", right = "" },
+              padding = { left = 1, right = 0 },
+            },
+          },
           lualine_c = {
             LazyVim.lualine.root_dir(),
             {
@@ -106,7 +114,7 @@ return {
             },
           },
           lualine_y = {
-            { "progress", separator = " ", padding = { left = 1, right = 0 } },
+            { "progress", separator = { left = "", right = "" }, padding = { left = 1, right = 0 } },
             { "location", padding = { left = 0, right = 1 } },
           },
           lualine_z = {

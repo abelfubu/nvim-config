@@ -5,11 +5,11 @@ return {
     opts = {
       popup_border_style = "rounded",
       window = {
-        position = "float",
-        popup = {
-          size = { width = "57", height = "60%" },
-          position = "50%",
-        },
+        position = "right",
+        -- popup = {
+        --   size = { width = "57", height = "60%" },
+        --   position = "50%",
+        -- },
       },
       default_component_configs = {
         icon = {
