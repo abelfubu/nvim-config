@@ -4,7 +4,6 @@ return {
     enabled = true,
     event = "VeryLazy",
     opts = function()
-      -- PERF: we don't need this lualine require madness 🤷
       local lualine_require = require("lualine_require")
       lualine_require.require = require
 
@@ -22,7 +21,6 @@ return {
           lualine_a = {
             {
               "mode",
-              icons_enabled = true,
               padding = { left = 1, right = 0 },
               separator = { left = "", right = "" },
               fmt = function(str)
@@ -114,13 +112,25 @@ return {
             },
           },
           lualine_y = {
-            { "progress", separator = { left = "", right = "" }, padding = { left = 1, right = 0 } },
+            { "progress", separator = { left = "", right = "" }, padding = { left = 1, right = 1 } },
             { "location", padding = { left = 0, right = 1 } },
           },
           lualine_z = {
-            function()
-              return " " .. os.date("%R")
-            end,
+            {
+              "mode",
+              separator = { left = "", right = "" },
+              padding = { left = 0, right = 0 },
+              fmt = function()
+                return "󱛡 "
+              end,
+            },
+            {
+              function()
+                return os.date("%R")
+              end,
+              separator = { left = "", right = "" },
+              color = { fg = "white", gui = "bold", bg = "base" },
+            },
           },
         },
         extensions = { "neo-tree", "lazy" },
