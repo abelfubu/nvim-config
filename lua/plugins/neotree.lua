@@ -6,6 +6,7 @@ return {
       popup_border_style = "rounded",
       window = {
         position = "right",
+        width = 75,
         -- popup = {
         --   size = { width = "57", height = "60%" },
         --   position = "50%",
