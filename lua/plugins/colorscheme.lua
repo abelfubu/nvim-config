@@ -2,7 +2,7 @@ return {
   {
     "catppuccin/nvim",
     opts = {
-      transparent_background = false,
+      transparent_background = true,
       integrations = {
         cmp = true,
         alpha = true,
