@@ -1,0 +1,34 @@
+{
+  "Angular Service Test": {
+    "prefix": "wkeunitservice",
+    "body": [
+      "import { TestBed } from '@angular/core/testing';",
+      "",
+      "describe(${1:MyService}.name, () => {",
+      "  beforeEach(() => {",
+      "    TestBed.configureTestingModule({",
+      "      providers: [${1:MyService}],",
+      "    });",
+      "  });",
+      "",
+      "  afterEach(() => jest.clearAllMocks());",
+      "",
+      "  function setup() {",
+      "    const service = TestBed.inject(${1:MyService});",
+      "",
+      "    return {",
+      "      service,",
+      "    };",
+      "  }",
+      "",
+      "  it('should ${2:do something}', () => {",
+      "    const { service } = setup();",
+      "",
+      "    expect(service).toBe(true);",
+      "  });",
+      "});"
+    ],
+    "description": "Creates a Jest test suite for an Angular service, allowing you to set the class name and move to complete the test description."
+  }
+}
+
