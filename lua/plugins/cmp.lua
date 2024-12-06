@@ -1,10 +1,7 @@
 return {
   {
     "hrsh7th/nvim-cmp",
-    dependencies = { { "onsails/lspkind.nvim" } },
     opts = function(_, opts)
-      local lspkind = require("lspkind")
-
       local custom_opts = {
         window = {
           completion = {
@@ -16,19 +13,30 @@ return {
             winhighlight = "Normal:CmpDocNormal,FloatBorder:CmpDocBorder,CursorLine:PmenuSel,Search:None",
           },
         },
+        sources = require("cmp").config.sources({
+          { name = "nvim_lsp" },
+          { name = "path" },
+          { name = "codeium" },
+        }, {
+          { name = "buffer" },
+        }),
         formatting = {
           fields = { "kind", "abbr", "menu" },
-          format = function(entry, vim_item)
-            vim_item.kind = string.format("%s %s", lspkind.symbol_map[vim_item.kind] or "", vim_item.kind)
+          format = function(entry, item)
+            local icons = LazyVim.config.icons.kinds
+            if icons[item.kind] then
+              item.kind = icons[item.kind] .. item.kind
+            end
 
-            vim_item.menu = ({
+            item.menu = ({
               nvim_lsp = "[LSP]",
               luasnip = "[Snippet]",
               buffer = "[Buffer]",
               path = "[Path]",
+              codeium = "[AI]",
             })[entry.source.name]
 
-            return vim_item
+            return item
           end,
         },
 

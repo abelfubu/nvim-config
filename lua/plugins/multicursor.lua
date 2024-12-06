@@ -54,7 +54,6 @@ return {
         desc = "Lock virtual cursors",
       },
       {
-        "n",
         "<Leader>m|",
         function()
           require("multiple-cursors").align()

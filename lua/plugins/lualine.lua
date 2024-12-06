@@ -5,6 +5,8 @@ return {
     event = "VeryLazy",
     opts = function()
       local lualine_require = require("lualine_require")
+      local mocha = require("catppuccin.palettes").get_palette("mocha")
+
       lualine_require.require = require
 
       local icons = LazyVim.config.icons
@@ -48,7 +50,7 @@ return {
             },
           },
           lualine_c = {
-            LazyVim.lualine.root_dir(),
+            -- LazyVim.lualine.root_dir(),
             {
               "diagnostics",
               symbols = {
@@ -58,8 +60,8 @@ return {
                 hint = icons.diagnostics.Hint,
               },
             },
-            { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
-            { LazyVim.lualine.pretty_path() },
+            -- { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
+            -- { LazyVim.lualine.pretty_path() },
           },
           lualine_x = {
             -- styluae ignore
@@ -112,6 +114,14 @@ return {
             },
           },
           lualine_y = {
+            {
+              "mode",
+              separator = { left = "", right = "" },
+              padding = { left = 0, right = 0 },
+              fmt = function()
+                return " "
+              end,
+            },
             { "progress", separator = { left = "", right = "" }, padding = { left = 1, right = 1 } },
             { "location", padding = { left = 0, right = 1 } },
           },
@@ -121,15 +131,42 @@ return {
               separator = { left = "", right = "" },
               padding = { left = 0, right = 0 },
               fmt = function()
-                return "󱛡 "
+                return " "
               end,
             },
+            -- {
+            --   function()
+            --     return os.date("%R")
+            --   end,
+            --   separator = { left = "", right = "" },
+            --   color = { fg = "white", gui = "bold", bg = "base" },
+            -- },
             {
               function()
-                return os.date("%R")
+                local clients = vim.lsp.get_clients({ bufnr = vim.api.nvim_get_current_buf() })
+                if #clients == 0 then
+                  return "No LSP"
+                end
+
+                local lspMap = {
+                  angularls = "󰚿",
+                  lua_ls = "󰢱",
+                  eslint = "",
+                  vtsls = "",
+                  gopls = "",
+                  tsserver = "",
+                  cssls = "",
+                }
+
+                local names = {}
+                for _, client in ipairs(clients) do
+                  table.insert(names, lspMap[client.name])
+                end
+
+                return table.concat(names, " ")
               end,
               separator = { left = "", right = "" },
-              color = { fg = "white", gui = "bold", bg = "base" },
+              color = { fg = mocha.rosewater, bg = mocha.base },
             },
           },
         },
