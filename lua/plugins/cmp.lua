@@ -17,6 +17,7 @@ return {
           { name = "nvim_lsp" },
           { name = "path" },
           { name = "codeium" },
+          { name = "luasnip" },
         }, {
           { name = "buffer" },
         }),

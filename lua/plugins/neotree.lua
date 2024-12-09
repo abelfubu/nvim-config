@@ -2,6 +2,7 @@ return {
   {
     "nvim-neo-tree/neo-tree.nvim",
     cmd = "Neotree",
+    enabled = false,
     opts = {
       popup_border_style = "rounded",
       window = {

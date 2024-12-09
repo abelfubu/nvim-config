@@ -15,6 +15,7 @@ return {
         dap_ui = true,
         treesitter = true,
         notify = true,
+        flash = true,
         telescope = {
           enabled = true,
           style = "nvchad",

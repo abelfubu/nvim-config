@@ -1,4 +1,3 @@
-local highlights = require("bufferline.highlights")
 return {
   {
     "akinsho/bufferline.nvim",
@@ -7,6 +6,8 @@ return {
 
       return {
         options = {
+          tab_size = 30,
+          max_name_length = 28,
           style_preset = require("bufferline").style_preset.no_italic,
           show_buffer_close_icons = false,
           color_icons = false,

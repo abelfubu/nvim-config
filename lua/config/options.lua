@@ -7,3 +7,4 @@ vim.opt.ttimeoutlen = 0
 -- vim.opt.shellcmdflag = "/c powershell.exe -NoLogo -NoProfile -NonInteractive -ExecutionPolicy RemoteSigned"
 -- vim.opt.shellpipe = "|"
 -- vim.opt.shellredir = ">"
+--
