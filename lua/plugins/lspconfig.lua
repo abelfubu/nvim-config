@@ -4,7 +4,7 @@ return {
     opts = {
       inlay_hints = { enabled = false },
       diagnostics = {
-        virtual_text = false,
+        virtual_text = true,
         float = { header = false, border = "rounded", focusable = true, auto = true },
         signs = {
           text = {
