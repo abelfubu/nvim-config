@@ -1,7 +1,7 @@
 return {
   {
     "nvim-telescope/telescope.nvim",
-    enabled = false,
+    enabled = true,
     keys = {
       {
         "<leader>fp",
@@ -14,20 +14,20 @@ return {
     },
     opts = {
       defaults = {
-        -- path_display = function(_, path)
-        --   local lastSlashIndex = path:find("[^/]*$")
-        --
-        --   if not lastSlashIndex then
-        --     return path
-        --   end
-        --
-        --   return path:sub(lastSlashIndex)
-        -- end,
+        path_display = { "filename_first" },
         prompt_prefix = "   ",
         layout_strategy = "horizontal",
-        layout_config = { prompt_position = "top", width = 0.70, height = 0.60 },
+        layout_config = { prompt_position = "top", width = 0.70, height = 0.65 },
         sorting_strategy = "ascending",
         winblend = 0,
+        mappings = {
+          i = {
+            ["<C-p>"] = require("telescope.actions.layout").toggle_preview,
+          },
+        },
+        preview = {
+          hide_on_startup = true,
+        },
       },
     },
   },
