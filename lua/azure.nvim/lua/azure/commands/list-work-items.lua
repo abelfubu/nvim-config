@@ -112,7 +112,7 @@ function M.list_work_items(opts)
 
           local preview_lines = {
             string.format("[%s]", item["System.Id"]),
-            string.format("# %s", item["System.Title"]),
+            string.format("# %s", string.upper(item["System.Title"])),
             string.format(" %s", item["System.ChangedDate"]:sub(0, 10)),
             string.format("󱖫 %s", item["System.State"]),
             string.format(
