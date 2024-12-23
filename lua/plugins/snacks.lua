@@ -5,13 +5,14 @@ return {
       { "<leader>qo", require("snacks").dashboard.open, desc = "Snacks open dashboard" },
     },
     opts = {
+      indent = { animate = { enabled = false }, enabled = false },
       dashboard = {
         sections = {
           {
             section = "terminal",
-            cmd = "ascii-image-converter /mnt/c/Users/abel.fuente/Pictures/amazed.png --color -c -W 60",
+            cmd = "ascii-image-converter /mnt/c/Users/abelfubu/Downloads/93489351.png --color -c",
             padding = 1,
-            height = 28,
+            height = 26,
           },
           {
             { pane = 2, section = "keys", gap = 1, padding = 1 },

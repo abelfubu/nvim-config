@@ -1,6 +1,7 @@
 return {
   {
     "akinsho/bufferline.nvim",
+    enabled = false,
     opts = function()
       local mocha = require("catppuccin.palettes").get_palette("mocha")
 
