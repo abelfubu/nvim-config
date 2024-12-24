@@ -1,7 +1,7 @@
 return {
   {
     "nvim-telescope/telescope.nvim",
-    enabled = true,
+    enabled = false,
     keys = {
       {
         "<leader>fp",
@@ -22,7 +22,7 @@ return {
         winblend = 0,
         mappings = {
           i = {
-            ["<C-p>"] = require("telescope.actions.layout").toggle_preview,
+            -- ["<C-p>"] = require("telescope.actions.layout").toggle_preview,
           },
         },
         preview = {

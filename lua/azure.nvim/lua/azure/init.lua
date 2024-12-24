@@ -3,6 +3,7 @@ local M = {}
 M.config = {
   project = "NewPOL",
   domain = "https://wkeuds.visualstudio.com",
+  nodeNames = { "Krypton Team", "Atalaya Team", "Eternia Team", "Castillo Grayskull", "Estación Zeta" },
 }
 
 M.setup = function(opts)

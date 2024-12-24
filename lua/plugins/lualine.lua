@@ -15,7 +15,7 @@ return {
 
       local opts = {
         options = {
-          theme = "auto",
+          theme = "catppuccin-mocha",
           globalstatus = vim.o.laststatus == 3,
           disabled_filetypes = { statusline = { "dashboard", "alpha", "ministarter" } },
         },
@@ -25,6 +25,7 @@ return {
               "mode",
               padding = { left = 1, right = 0 },
               separator = { left = "", right = "" },
+              color = { fg = mocha.blue, gui = "bold", bg = mocha.base },
               fmt = function(str)
                 local modeMap = {
                   NORMAL = " ",
@@ -46,7 +47,8 @@ return {
               "branch",
               icon = { "󰊢", align = "left" },
               separator = { left = "", right = "" },
-              padding = { left = 1, right = 0 },
+              padding = { left = 2, right = 0 },
+              color = { fg = mocha.yellow, gui = "bold", bg = mocha.base },
             },
           },
           lualine_c = {
@@ -59,13 +61,13 @@ return {
                 info = icons.diagnostics.Info,
                 hint = icons.diagnostics.Hint,
               },
+              separator = { left = "", right = "" },
             },
             { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
             -- { LazyVim.lualine.pretty_path() },
             { "filename", path = 0 },
           },
           lualine_x = {
-            -- styluae ignore
             {
               function()
                 return require("noice").api.status.command.get()
@@ -77,30 +79,35 @@ return {
                 return { fg = Snacks.util.color("Statement") }
               end,
             },
-        -- stylua: ignore
-        {
-          function() return require("noice").api.status.mode.get() end,
-          cond = function() return package.loaded["noice"] and require("noice").api.status.mode.has() end,
-          color = function()
-            return { fg = Snacks.util.color("Constant") }
-          end,
-        },
-        -- stylua: ignore
-        {
-          function() return "  " .. require("dap").status() end,
-          cond = function() return package.loaded["dap"] and require("dap").status() ~= "" end,
-          color = function()
-            return { fg = Snacks.util.color("Debug") }
-          end,
-        },
-        -- stylua: ignore
-        {
-          require("lazy.status").updates,
-          cond = require("lazy.status").has_updates,
-          color = function()
-            return { fg = Snacks.util.color("Special") }
-          end,
-        },
+            {
+              function()
+                return require("noice").api.status.mode.get()
+              end,
+              cond = function()
+                return package.loaded["noice"] and require("noice").api.status.mode.has()
+              end,
+              color = function()
+                return { fg = Snacks.util.color("Constant") }
+              end,
+            },
+            {
+              function()
+                return "  " .. require("dap").status()
+              end,
+              cond = function()
+                return package.loaded["dap"] and require("dap").status() ~= ""
+              end,
+              color = function()
+                return { fg = Snacks.util.color("Debug") }
+              end,
+            },
+            {
+              require("lazy.status").updates,
+              cond = require("lazy.status").has_updates,
+              color = function()
+                return { fg = Snacks.util.color("Special") }
+              end,
+            },
             {
               "diff",
               symbols = {
@@ -122,37 +129,41 @@ return {
           },
           lualine_y = {
             {
-              "mode",
+              "",
               separator = { left = "", right = "" },
-              padding = { left = 0, right = 0 },
+              padding = { left = 0, right = 1 },
               fmt = function()
-                return " "
+                return ""
               end,
+              color = { fg = mocha.base, bg = mocha.yellow },
             },
-            { "progress", separator = { left = "", right = "" }, padding = { left = 1, right = 1 } },
-            { "location", padding = { left = 0, right = 1 } },
+            {
+              "progress",
+              separator = { left = "", right = "" },
+              padding = { left = 1, right = 1 },
+              color = { fg = mocha.yellow, bg = mocha.base },
+            },
+            {
+              "location",
+              padding = { left = 0, right = 1 },
+              color = { fg = mocha.yellow, bg = mocha.base },
+            },
           },
           lualine_z = {
             {
-              "mode",
+              "",
               separator = { left = "", right = "" },
               padding = { left = 0, right = 0 },
+              color = { fg = mocha.base, bg = mocha.blue },
               fmt = function()
-                return " "
+                return "  "
               end,
             },
-            -- {
-            --   function()
-            --     return os.date("%R")
-            --   end,
-            --   separator = { left = "", right = "" },
-            --   color = { fg = "white", gui = "bold", bg = "base" },
-            -- },
             {
               function()
                 local clients = vim.lsp.get_clients({ bufnr = vim.api.nvim_get_current_buf() })
                 if #clients == 0 then
-                  return "No LSP"
+                  return ""
                 end
 
                 local lspMap = {
@@ -163,6 +174,7 @@ return {
                   gopls = "",
                   tsserver = "",
                   cssls = "",
+                  rustls = "󱘗",
                 }
 
                 local names = {}
@@ -173,32 +185,12 @@ return {
                 return table.concat(names, " ")
               end,
               separator = { left = "", right = "" },
-              color = { fg = mocha.rosewater, bg = mocha.base },
+              color = { fg = mocha.blue, bg = mocha.base },
             },
           },
         },
         extensions = { "neo-tree", "lazy" },
       }
-
-      -- do not add trouble symbols if aerial is enabled
-      -- And allow it to be overriden for some buffer types (see autocmds)
-      if vim.g.trouble_lualine and LazyVim.has("trouble.nvim") then
-        local trouble = require("trouble")
-        local symbols = trouble.statusline({
-          mode = "symbols",
-          groups = {},
-          title = false,
-          filter = { range = true },
-          format = "{kind_icon}{symbol.name:Normal}",
-          hl_group = "lualine_c_normal",
-        })
-        table.insert(opts.sections.lualine_c, {
-          symbols and symbols.get,
-          cond = function()
-            return vim.b.trouble_lualine ~= false and symbols.has()
-          end,
-        })
-      end
 
       return opts
     end,

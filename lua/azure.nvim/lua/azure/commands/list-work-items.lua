@@ -8,16 +8,13 @@ local utils = require("telescope.previewers.utils")
 
 local M = {}
 
-local teams = { "Krypton Team", "Atalaya Team", "Eternia Team", "Castillo Grayskull", "Estación Zeta" }
-
 function M.list_work_items(opts)
   local teams_list = table.concat(
     vim.tbl_map(function(team)
       return string.format("'%s'", team)
-    end, teams),
+    end, require("azure").config.nodeNames),
     ", "
   )
-  -- WHERE [System.WorkItemType] IN ('Task', 'User Story', 'Bug', 'Defect')
 
   local query = string.format(
     [[
