@@ -1,0 +1,70 @@
+* Host fgo-stg-k8s.a3software.com:443 was resolved.
+* IPv6: (none)
+* IPv4: 52.158.116.213
+*   Trying 52.158.116.213:443...
+* Connected to fgo-stg-k8s.a3software.com (52.158.116.213) port 443
+* schannel: disabled automatic use of client certificate
+* ALPN: curl offers http/1.1
+* ALPN: server did not agree on a protocol. Uses default.
+*    Subject: CN=fgo-stg-k8s.a3software.com, O=Zscaler Inc., OU=Zscaler Inc.
+*    Issuer: C=EU, L=WoltersKluwer, ST=WoltersKluwer, O=WoltersKluwer, OU=WoltersKluwer, CN=WoltersKluwer (t) 
+*    Version: 2
+*    Serial Number: 7f:eb:b3:6b:a4:ee:40:1c:ce:f2:28:2f:84:1b:7e:9a:5c:1a:
+*    Signature Algorithm: sha256WithRSAEncryption
+*    Start Date: 2025-02-10 04:45:14 GMT
+*    Expire Date: 2025-02-22 07:42:15 GMT
+*    Public Key Algorithm: rsaEncryption
+*    RSA Public Key (2048 bits)
+*    rsa(n): b7:d3:db:b8:be:e3:41:ef:e7:5e:a7:c0:7c:af:b5:7c:13:68:2a:18:4c:85:16:33:bc:d0:d7:7b:c8:ee:1c:dd:d3:75:96:07:d8:e9:ec:e3:91:81:44:d8:48:81:2c:fd:bb:57:c3:ee:3c:f6:5f:d3:83:99:5e:60:2f:de:d9:1d:ed:28:1e:c0:bb:89:c8:c1:52:36:80:b1:68:c6:73:87:7d:31:77:37:ff:4f:0f:e7:41:49:08:fb:a0:00:bf:fb:88:3c:0a:ab:5e:cd:ab:9c:44:dd:49:69:73:b5:c1:9d:0f:e6:c2:f3:91:e5:20:6c:27:c3:50:71:93:58:5b:1e:32:bc:a1:51:66:91:bb:66:3c:09:de:c9:23:47:d3:52:f1:79:4c:01:8f:b6:cb:51:d9:7d:b7:13:ad:93:0a:b5:de:b4:7d:6d:5c:59:28:71:25:d8:64:c1:75:cd:54:7c:83:57:66:4b:c7:25:cf:c3:2d:d7:cb:80:df:d5:78:77:00:d0:91:ed:b3:07:e4:cb:e0:ce:91:4b:8d:5a:ae:5f:f6:d7:b0:df:e9:05:7c:22:9d:93:33:48:cb:72:37:66:c1:49:df:c8:37:d3:56:4e:dc:e4:59:7f:0d:74:8a:99:2c:98:8a:b4:bc:5c:7f:7f:d8:aa:3b:71:91:33:9f:03:
+*    rsa(e): 0x10001
+*    Signature: 50:5d:0e:f7:4d:75:67:cd:a4:75:c9:b0:67:0c:ef:15:fc:6e:1d:c3:fe:c9:5f:81:c7:19:01:68:a1:d4:ca:c5:9a:cb:46:7e:6b:cf:8d:33:a7:72:bc:89:97:4f:f6:1f:9b:dc:11:20:06:90:d5:b4:a1:91:93:60:c3:90:83:c0:d6:f9:3d:72:1e:19:30:be:6b:88:42:b1:9b:09:53:03:46:39:fa:85:07:f6:92:a4:99:d6:8c:a9:14:21:75:62:97:89:8d:e3:1f:10:77:5c:71:4d:da:d6:8d:62:57:c7:a2:cc:ca:71:60:85:dc:44:2f:28:7a:ec:e8:ec:77:9c:28:21:1d:4b:0e:e6:9e:da:06:ce:1e:2d:97:78:c5:e8:a5:e3:b3:f8:7c:3d:ac:81:5d:c3:3b:a9:4b:7a:09:df:2b:2f:40:58:dd:b3:fc:04:01:ba:9d:3a:9f:ec:79:24:c3:7e:db:84:ae:97:74:45:fe:4f:44:d1:7a:65:6f:78:40:21:8b:d1:bf:68:e6:c6:db:cf:22:ca:95:d7:26:f8:ed:0d:7c:32:fb:e8:da:d7:b9:4c:93:d8:9e:0f:2f:e5:59:bb:c5:b9:51:36:b3:67:53:9f:7c:9a:26:a6:23:a0:58:67:30:77:6d:0b:04:bd:9b:ea:ff:94:82:bb:cb:71:
+*    Cert: -----BEGIN CERTIFICATE-----
+MIIEVDCCAzygAwIBAgISf+uza6TuQBzO8igvhBt+mlwaMA0GCSqGSIb3DQEBCwUA
+MIGKMQswCQYDVQQGEwJFVTEWMBQGA1UEBwwNV29sdGVyc0tsdXdlcjEWMBQGA1UE
+CAwNV29sdGVyc0tsdXdlcjEWMBQGA1UECgwNV29sdGVyc0tsdXdlcjEWMBQGA1UE
+CwwNV29sdGVyc0tsdXdlcjEbMBkGA1UEAwwSV29sdGVyc0tsdXdlciAodCkgMB4X
+DTI1MDIxMDA0NDUxNFoXDTI1MDIyMjA3NDIxNVowUzEjMCEGA1UEAxMaZmdvLXN0
+Zy1rOHMuYTNzb2Z0d2FyZS5jb20xFTATBgNVBAoMDFpzY2FsZXIgSW5jLjEVMBMG
+A1UECwwMWnNjYWxlciBJbmMuMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKC
+AQEAt9PbuL7jQe/nXqfAfK+1fBNoKhhMhRYzvNDXe8juHN3TdZYH2Ons45GBRNhI
+gSz9u1fD7jz2X9ODmV5gL97ZHe0oHsC7icjBUjaAsWjGc4d9MXc3/08P50FJCPug
+AL/7iDwKq17Nq5xE3Ulpc7XBnQ/mwvOR5SBsJ8NQcZNYWx4yvKFRZpG7ZjwJ3skj
+R9NS8XlMAY+2y1HZfbcTrZMKtd60fW1cWShxJdhkwXXNVHyDV2ZLxyXPwy3Xy4Df
+1Xh3ANCR7bMH5MvgzpFLjVquX/bXsN/pBXwinZMzSMtyN2bBSd/IN9NWTtzkWX8N
+dIqZLJiKtLxcf3/YqjtxkTOfAwIDAQABo4HpMIHmMA4GA1UdDwEB/wQEAwIFoDAT
+BgNVHSUEDDAKBggrBgEFBQcDATAMBgNVHRMBAf8EAjAAMCUGA1UdEQQeMByCGmZn
+by1zdGctazhzLmEzc29mdHdhcmUuY29tMEoGA1UdHwRDMEEwP6A9oDuGOWh0dHA6
+Ly9nYXRld2F5LnpzY2FsZXIubmV0L3pzY2FsZXItenNjcmwtMzY0MjYzNTYtMjk0
+LmNybDAdBgNVHQ4EFgQURt50jfiLKAQXoWle622Xeje+B70wHwYDVR0jBBgwFoAU
+0C9Tamn01icJpmjD5BgJMb4sVnUwDQYJKoZIhvcNAQELBQADggEBAFBdDvdNdWfN
+pHXJsGcM7xX8bh3D/slfgccZAWih1MrFmstGfmvPjTOncryJl0/2H5vcESAGkNW0
+oZGTYMOQg8DW+T1yHhkwvmuIQrGbCVMDRjn6hQf2kqSZ1oypFCF1YpeJjeMfEHdc
+cU3a1o1iV8eizMpxYIXcRC8oeuzo7HecKCEdSw7mntoGzh4tl3jF6KXjs/h8PayB
+XcM7qUt6Cd8rL0BY3bP8BAG6nTqf7Hkkw37bhK6XdEX+T0TRemVveEAhi9G/aObG
+288iypXXJvjtDXwy++ja17lMk9ieDy/lWbvFuVE2s2dTn3yaJqYjoFhnMHdtCwS9
+m+r/lIK7y3E=
+-----END CERTIFICATE-----
+
+* using HTTP/1.x
+> POST /api-latf/v1/RegisteredEventsQuery HTTP/1.1
+> Host: fgo-stg-k8s.a3software.com
+> User-Agent: kulala.nvim/4.10.0
+> content-type:application/json
+> Authorization:Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl9pZCI6IjQ3NDNhYThlLWE4NWQtNDk4NC04ZDU3LWY4MzYyZjUwNzU1ZiIsImNsaWVudF9pZCI6IldLLkVTLkEzRkFDVFVSQSIsInNjb3BlIjoiV0suRVMuQTNGQUNUVVJBIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZ2l2ZW5uYW1lIjoieGFsb2MubW9saW5lckB3b2x0ZXJza2x1d2VyLmNvbSIsImxhbmciOiJlcyIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6InhhbG9jLm1vbGluZXJAd29sdGVyc2tsdXdlci5jb20iLCJzdWIiOiJ4YWxvYy5tb2xpbmVyQHdvbHRlcnNrbHV3ZXIuY29tIiwid2suZXMua2V5dXNlcmNvcnJlbGF0aW9uaWQiOiI1Mjc2M2RjOS01ZWJmLTQ5N2QtYjA0Ni02NmRlYTUzMzZkYTIiLCJ1c3IiOiI1Mjc2M2RjOS01ZWJmLTQ5N2QtYjA0Ni02NmRlYTUzMzZkYTIiLCJ3ay5lcy5yb2xpZCI6ImIwMDQ5ZTE2LWM1NDgtZWExMS1hNjAxLTAwMDNmZjFlNDFlMCIsIndrLmVzLmNsaWVudGlkIjoiMTYzIiwid2suZXMucm9sZSI6IkFkbWluaXN0cmF0b3IiLCJ3ay5lcy5pZGNkYSI6IlhBUFJPIiwid2suZXMuY29tcGFueVR5cGVEZWZpbmVkIjoiY29tcGFueVR5cGVEZWZpbmVkIiwibmJmIjoxNzM4OTMzMzI5LCJleHAiOjE3Mzg5MzY5MjksImlzcyI6Imh0dHBzOi8vYTNmYWN0dXJhLndvbHRlcnNrbHV3ZXIuZXMiLCJhdWQiOiJodHRwczovL2EzZmFjdHVyYS53b2x0ZXJza2x1d2VyLmVzIn0.a57GFScBlKY2oam1BA3luYCrjWF4qEYRzFdw5TxB3rH107nfeW9MzzeHOmJIg3PHI5uj1NoODWah9bdD1UwLhA
+> accept:application/json
+> Content-Length: 167
+> 
+} [167 bytes data]
+* upload completely sent off: 167 bytes
+< HTTP/1.1 400 Bad Request
+< Date: Mon, 10 Feb 2025 12:21:47 GMT
+< Content-Type: application/problem+json; charset=utf-8
+< Transfer-Encoding: chunked
+< Connection: keep-alive
+< Cache-Control: no-cache, no-store, must-revalidate
+< Expires: 0
+< Pragma: no-cache
+< Strict-Transport-Security: max-age=31536000; includeSubDomains
+< 
+{ [152 bytes data]
+* Connection #0 to host fgo-stg-k8s.a3software.com left intact

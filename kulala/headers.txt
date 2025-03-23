@@ -1,0 +1,10 @@
+HTTP/1.1 400 Bad Request
+Date: Mon, 10 Feb 2025 12:21:47 GMT
+Content-Type: application/problem+json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Cache-Control: no-cache, no-store, must-revalidate
+Expires: 0
+Pragma: no-cache
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+
